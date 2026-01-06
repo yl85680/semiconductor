@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧製造 - 台灣工業 4.0 轉型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .glass-morphism {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .industry-accent {
+            border-left: 4px solid #f59e0b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="fixed w-full z-50 glass-morphism py-4 px-8 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tighter cursor-pointer" onclick="location.href='index.html'">TAIWAN
+            <span class="text-cyan-400 italic">AI+</span>
+        </div>
+
+        <div class="hidden md:flex space-x-8 font-medium items-center text-sm">
+            <a href="index.html" class="hover:text-cyan-400 transition">首頁</a>
+            <a href="semiconductor.html" class="hover:text-cyan-400 transition">半導體</a>
+            <a href="industry.html" class="text-cyan-400">智慧製造</a> <a href="edge-ai.html"
+                class="hover:text-cyan-400 transition">邊緣運算</a>
+            <button id="navLoginBtn" onclick="openModal()"
+                class="bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-2 rounded-full transition text-xs">
+                會員登入
+            </button>
+        </div>
+
+        <button class="md:hidden text-2xl text-white" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 bg-slate-900 z-[100] flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button onclick="toggleMenu()" class="absolute top-6 right-8 text-4xl">&times;</button>
+        <a href="index.html" onclick="toggleMenu()">首頁</a>
+        <a href="semiconductor.html" onclick="toggleMenu()">半導體產業</a>
+        <a href="industry.html" onclick="toggleMenu()">智慧製造</a>
+        <a href="edge-ai.html" onclick="toggleMenu()">邊緣運算</a>
+        <button id="navLoginBtn" onclick="toggleMenu(); openModal();" class="text-cyan-400">會員登入</button>
+    </div>
+
+    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+        <section class="mb-16">
+            <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Smart Manufacturing</span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-6">智慧製造：從自動化到「自主化」</h1>
+            <p class="text-slate-400 text-lg leading-relaxed">
+                台灣正利用 AI 技術升級其龐大的製造業基礎。智慧製造不只是使用機器人，而是透過大數據、物聯網 (IoT) 與人工智慧，讓工廠擁有自我學習與即時決策的能力。
+            </p>
+        </section>
+
+        <div class="space-y-12">
+            <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 industry-accent">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">1. 預測性維護 (Predictive Maintenance)</h2>
+                <p class="text-slate-300">
+                    透過在機台上安裝振動與溫度感測器，AI 可以分析設備運作的細微異常。在故障發生前 48 小時發出預警，避免停機造成的數百萬損失。
+                </p>
+            </div>
+
+            <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 industry-accent">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">2. AI 視覺檢測 (AOI)</h2>
+                <p class="text-slate-300">
+                    傳統人工目檢容易疲勞且出錯。現在透過高解析度相機結合深度學習模型，能以毫秒級的速度識別產品瑕疵，將產品良率提升至極致。
+                </p>
+            </div>
+
+            <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 industry-accent">
+                <h2 class="text-2xl font-bold mb-4 text-amber-400">3. 數位孿生 (Digital Twin)</h2>
+                <p class="text-slate-300">
+                    在虛擬空間建立一個與真實工廠完全同步的數位模型。管理者可以在電腦上模擬生產線調整後的影響，降低實際更動的風險與成本。
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="mt-16 text-center">
+            <a href="index.html" class="text-slate-500 hover:text-white transition">← 返回首頁</a>
+        </div>
+    </main>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 bg-slate-900 z-[100] flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button onclick="toggleMenu()" class="absolute top-6 right-8 text-4xl">&times;</button>
+        <a href="index.html" onclick="toggleMenu()">首頁</a>
+        <a href="industry.html" onclick="toggleMenu()">智慧製造</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        // 1. 網頁開啟時，檢查是否有登入紀錄
+        window.onload = function () {
+            const userName = localStorage.getItem("username");
+            const loginBtn = document.getElementById("navLoginBtn");
+
+            if (userName && loginBtn) {
+                // 如果有名字，按鈕改為顯示名字
+                loginBtn.innerHTML = `<i class="fas fa-user-circle mr-2"></i>${userName}`;
+                // 重要：把點擊功能從「開彈窗」換成「登出」
+                loginBtn.onclick = handleLogout;
+                loginBtn.classList.remove('bg-cyan-600');
+                loginBtn.classList.add('bg-slate-700');
+            }
+        };
+
+        // 2. 登入功能：存下名字並過濾 Email
+        function handleLogin() {
+            const userInput = document.getElementById('loginUser').value;
+            if (userInput === "") {
+                alert("請輸入帳號");
+            } else {
+                // 自動過濾：只取 @ 之前的文字當名字
+                let displayName = userInput.split('@')[0];
+                localStorage.setItem("username", displayName);
+                alert(displayName + "，歡迎回來！");
+                location.reload(); // 重新整理頁面以更新 UI
+            }
+        }
+
+        // 3. 登出功能：清除紀錄
+        function handleLogout() {
+            if (confirm("確定要登出帳號嗎？")) {
+                localStorage.removeItem("username");
+                location.reload();
+            }
+        }
+
+        // 4. 原有的彈窗與選單控制
+        function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
+        function openModal() { document.getElementById('loginModal').classList.remove('hidden'); }
+        function closeModal() { document.getElementById('loginModal').classList.add('hidden'); }
+        function toggleAuthMode() {
+            document.getElementById('loginForm').classList.toggle('hidden');
+            document.getElementById('registerForm').classList.toggle('hidden');
+        }
+        function handleRegister() { alert("註冊成功！請重新登入。"); toggleAuthMode(); }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target == modal) closeModal();
+        }
+    </script>
+</body>
+
+</html>

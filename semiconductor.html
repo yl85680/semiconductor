@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>半導體底座 - 台灣 AI 工業核心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .glass-morphism {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-border {
+            border-left: 4px solid #22d3ee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="fixed w-full z-50 glass-morphism py-4 px-8 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tighter cursor-pointer" onclick="location.href='index.html'">TAIWAN
+            <span class="text-cyan-400 italic">AI+</span>
+        </div>
+
+        <div class="hidden md:flex space-x-8 font-medium items-center text-sm">
+            <a href="index.html" class="hover:text-cyan-400 transition">首頁</a>
+            <a href="semiconductor.html" class="text-cyan-400">半導體</a>
+            <a href="industry.html" class="hover:text-cyan-400 transition">智慧製造</a>
+            <a href="edge-ai.html" class="hover:text-cyan-400 transition">邊緣運算</a>
+            <button id="navLoginBtn" onclick="openModal()"
+                class="bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-2 rounded-full transition text-xs">
+                會員登入
+            </button>
+        </div>
+
+        <button class="md:hidden text-2xl text-white" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 bg-slate-900 z-[100] flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button onclick="toggleMenu()" class="absolute top-6 right-8 text-4xl">&times;</button>
+        <a href="index.html" onclick="toggleMenu()">首頁</a>
+        <a href="semiconductor.html" onclick="toggleMenu()">半導體產業</a>
+        <a href="industry.html" onclick="toggleMenu()">智慧製造</a>
+        <a href="edge-ai.html" onclick="toggleMenu()">邊緣運算</a>
+        <button id="navLoginBtn" onclick="toggleMenu(); openModal();" class="text-cyan-400">會員登入</button>
+    </div>
+
+    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+        <section class="mb-16">
+            <span class="text-cyan-400 font-bold tracking-widest uppercase text-sm">Core Technology</span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-6">半導體：AI 時代的「數位石油」</h1>
+            <p class="text-slate-400 text-lg leading-relaxed">
+                台灣在全球半導體產業鏈中扮演著不可或缺的角色。從台積電的先進製程到日月光的封裝技術，台灣提供了運行大規模 AI 模型所需的物理基礎。
+            </p>
+        </section>
+
+        <div class="space-y-12">
+            <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 tech-border">
+                <h2 class="text-2xl font-bold mb-4 text-cyan-300">1. 先進製程 (Advanced Nodes)</h2>
+                <p class="text-slate-300 mb-4">
+                    AI 運算需要極高的晶體管密度與低功耗。台灣目前在 **3 奈米與 2 奈米** 製程上領先全球，這是開發如 NVIDIA H100 等高效能計算 (HPC) 晶片的唯一選擇。
+                </p>
+                <ul class="list-disc list-inside text-slate-400 space-y-2">
+                    <li>提供生成式 AI 所需的高速運算力</li>
+                    <li>顯著降低 AI 伺服器中心的能耗</li>
+                    <li>穩定的良率支撐全球 AI 晶片供應</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 tech-border">
+                <h2 class="text-2xl font-bold mb-4 text-cyan-300">2. 先進封裝 (CoWoS)</h2>
+                <p class="text-slate-300">
+                    當單一晶片的性能達到極限，**CoWoS (Chip on Wafer on Substrate)** 封裝技術成為關鍵。這種將處理器與高頻寬記憶體 (HBM) 整合在一起的技術，目前主要在台灣生產。
+                </p>
+            </div>
+
+            <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 tech-border">
+                <h2 class="text-2xl font-bold mb-4 text-cyan-300">3. 產業鏈群聚效應</h2>
+                <p class="text-slate-300 leading-relaxed">
+                    從新竹科學園區到南科，台灣擁有完整的「一站式」供應鏈：
+                </p>
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <div class="bg-slate-900 p-4 rounded text-center">
+                        <span class="block text-cyan-400 font-bold">IC 設計</span>
+                        <span class="text-xs text-slate-500">聯發科 / 聯詠</span>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded text-center">
+                        <span class="block text-cyan-400 font-bold">晶圓代工</span>
+                        <span class="text-xs text-slate-500">台積電 / 聯電</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="index.html" class="text-slate-500 hover:text-white transition">← 返回首頁</a>
+        </div>
+    </main>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 bg-slate-900 z-[100] flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button onclick="toggleMenu()" class="absolute top-6 right-8 text-4xl">&times;</button>
+        <a href="index.html" onclick="toggleMenu()">首頁</a>
+        <a href="semiconductor.html" onclick="toggleMenu()">半導體產業</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        // 1. 網頁開啟時，檢查是否有登入紀錄
+        window.onload = function () {
+            const userName = localStorage.getItem("username");
+            const loginBtn = document.getElementById("navLoginBtn");
+
+            if (userName && loginBtn) {
+                // 如果有名字，按鈕改為顯示名字
+                loginBtn.innerHTML = `<i class="fas fa-user-circle mr-2"></i>${userName}`;
+                // 重要：把點擊功能從「開彈窗」換成「登出」
+                loginBtn.onclick = handleLogout;
+                loginBtn.classList.remove('bg-cyan-600');
+                loginBtn.classList.add('bg-slate-700');
+            }
+        };
+
+        // 2. 登入功能：存下名字並過濾 Email
+        function handleLogin() {
+            const userInput = document.getElementById('loginUser').value;
+            if (userInput === "") {
+                alert("請輸入帳號");
+            } else {
+                // 自動過濾：只取 @ 之前的文字當名字
+                let displayName = userInput.split('@')[0];
+                localStorage.setItem("username", displayName);
+                alert(displayName + "，歡迎回來！");
+                location.reload(); // 重新整理頁面以更新 UI
+            }
+        }
+
+        // 3. 登出功能：清除紀錄
+        function handleLogout() {
+            if (confirm("確定要登出帳號嗎？")) {
+                localStorage.removeItem("username");
+                location.reload();
+            }
+        }
+
+        // 4. 原有的彈窗與選單控制
+        function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
+        function openModal() { document.getElementById('loginModal').classList.remove('hidden'); }
+        function closeModal() { document.getElementById('loginModal').classList.add('hidden'); }
+        function toggleAuthMode() {
+            document.getElementById('loginForm').classList.toggle('hidden');
+            document.getElementById('registerForm').classList.toggle('hidden');
+        }
+        function handleRegister() { alert("註冊成功！請重新登入。"); toggleAuthMode(); }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target == modal) closeModal();
+        }
+    </script>
+</body>
+
+</html>
